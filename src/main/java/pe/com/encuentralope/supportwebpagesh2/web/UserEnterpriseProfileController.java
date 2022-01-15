@@ -14,7 +14,10 @@ import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userEnterpriseProfi
 import reactor.core.publisher.Mono;
 
 import java.util.List;
-
+@CrossOrigin(value = { "http://allowed-origin.com" },
+        allowedHeaders = { "Baeldung-Allowed" },
+        maxAge = 900
+)
 @RestController
 @RequestMapping("/api/users/uep")
 @AllArgsConstructor
