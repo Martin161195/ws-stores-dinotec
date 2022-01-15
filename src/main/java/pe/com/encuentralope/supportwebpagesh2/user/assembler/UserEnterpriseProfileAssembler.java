@@ -1,26 +1,25 @@
 package pe.com.encuentralope.supportwebpagesh2.user.assembler;
 
 import pe.com.encuentralope.supportwebpagesh2.user.model.domain.User;
+import pe.com.encuentralope.supportwebpagesh2.user.model.domain.UserEnterpriseProfile;
 import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.request.CreateUserRequestDTO;
 import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.request.UpdateUserRequestDTO;
 import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.response.CreateUserResponseDTO;
 import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.response.UserResponseDTO;
+import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userEnterpriseProfileDTO.response.UserEnterpriseProfileResponseDTO;
 
 import java.time.Instant;
 import java.time.OffsetDateTime;
 
-public class UserAssembler {
+public class UserEnterpriseProfileAssembler {
 
-
-    public static UserResponseDTO mapUserToDTO(User user){
-        return UserResponseDTO.builder()
-                .userId(user.getUserId())
-                .email(user.getEmail())
-                .lastLogin(user.getLastLogin())
-                .isSuperuser(user.isSuperuser())
-                .isStaff(user.isStaff())
-                .isEnterprise(user.isEnterprise())
-                .dateJoined(user.getDateJoined())
+    public static UserEnterpriseProfileResponseDTO mapUEPModelToDTO(UserEnterpriseProfile uep){
+        return UserEnterpriseProfileResponseDTO.builder()
+                .uepid(uep.getUepId())
+                .busineessName(uep.getBusinessName())
+                .urlPicture(uep.getUrlPicture())
+                .urlWeb(uep.getUrlWeb())
+                .userId(uep.getUserId())
                 .build();
     }
 
@@ -59,7 +58,6 @@ public class UserAssembler {
                 .dateModified(OffsetDateTime.from(Instant.now()))
                 .build();
     }
-
 
 
 }

@@ -2,7 +2,6 @@ package pe.com.encuentralope.supportwebpagesh2.web;
 
 
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import pe.com.encuentralope.supportwebpagesh2.user.business.UserService;
@@ -11,13 +10,13 @@ import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.request.Upd
 import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.response.CreateUserResponseDTO;
 
 import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.response.UserResponseDTO;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
+import reactor.core.publisher.Mono;
+import java.util.List;
 
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users/user")
 @AllArgsConstructor
 public class UserController {
 
@@ -25,7 +24,7 @@ public class UserController {
 
 
     @GetMapping(path = "/", produces = {MediaType.APPLICATION_STREAM_JSON_VALUE, MediaType.APPLICATION_JSON_VALUE})
-    public Flux<UserResponseDTO> getAllUsers(){
+    public Mono<List<UserResponseDTO>> getAllUsers(){
         return userService.getAllUsers();
     }
 

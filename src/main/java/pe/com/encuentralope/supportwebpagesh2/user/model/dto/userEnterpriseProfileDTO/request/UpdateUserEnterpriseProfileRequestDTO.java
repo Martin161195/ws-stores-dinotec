@@ -1,12 +1,12 @@
 package pe.com.encuentralope.supportwebpagesh2.user.model.dto.userEnterpriseProfileDTO.request;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateUserEnterpriseProfileRequesDTO {
-
+public class UpdateUserEnterpriseProfileRequestDTO {
 
     private String busineessName;
     private String ruc;
@@ -14,7 +14,4 @@ public class CreateUserEnterpriseProfileRequesDTO {
     private String phoneNumber;
     private String urlWeb;
     private long sectorId;
-    private long userId;
-
-
 }

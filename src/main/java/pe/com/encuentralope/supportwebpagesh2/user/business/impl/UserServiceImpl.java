@@ -14,6 +14,7 @@ import pe.com.encuentralope.supportwebpagesh2.user.repository.UserRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
 
 
 @Service
@@ -23,9 +24,10 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public Flux<UserResponseDTO> getAllUsers() {
+    public Mono<List<UserResponseDTO>> getAllUsers() {
         Flux<User> user =  userRepository.findAll();
-        return user.map(UserAssembler::mapUserToDTO);
+        return user.map(UserAssembler::mapUserToDTO)
+                .collectList();
 
     }
 

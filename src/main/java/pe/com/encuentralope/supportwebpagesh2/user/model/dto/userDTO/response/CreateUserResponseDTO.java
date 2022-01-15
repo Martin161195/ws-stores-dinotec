@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -19,5 +20,5 @@ public class CreateUserResponseDTO implements Serializable {
     private boolean isStaff;
     private boolean isActive;
     private boolean isEnterprise;
-    private Timestamp dateJoined;
+    private OffsetDateTime dateJoined;
 }

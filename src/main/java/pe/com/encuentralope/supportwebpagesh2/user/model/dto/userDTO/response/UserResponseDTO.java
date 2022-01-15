@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -13,10 +14,10 @@ public class UserResponseDTO {
 
     private long userId;
     private String email;
-    private Timestamp lastLogin;
+    private OffsetDateTime lastLogin;
     private boolean isSuperuser;
     private boolean isStaff;
     private boolean isActive;
     private boolean isEnterprise;
-    private Timestamp dateJoined;
+    private OffsetDateTime dateJoined;
 }

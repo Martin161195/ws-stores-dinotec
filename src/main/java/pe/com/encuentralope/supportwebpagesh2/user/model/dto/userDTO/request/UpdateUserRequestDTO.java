@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 
 @Getter
 @Setter
@@ -12,7 +13,7 @@ import java.sql.Timestamp;
 public class UpdateUserRequestDTO {
 
     private String email;
-    private Timestamp lastLogin;
+    private OffsetDateTime lastLogin;
     private String password;
     private boolean isSuperuser;
     private boolean isStaff;

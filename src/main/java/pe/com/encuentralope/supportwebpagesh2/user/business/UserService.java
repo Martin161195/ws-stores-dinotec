@@ -9,9 +9,11 @@ import pe.com.encuentralope.supportwebpagesh2.user.model.dto.userDTO.response.Us
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 public interface UserService {
 
-    public Flux<UserResponseDTO> getAllUsers();
+    public Mono<List<UserResponseDTO>> getAllUsers();
 
     public Mono<UserResponseDTO> getUserById(Long userId);
 
